@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="match_parent"
+              android:background="@android:color/transparent"
+              android:gravity="center"
+              android:orientation="vertical"
+              android:paddingBottom="5dp"
+              android:paddingLeft="5dp"
+              android:paddingRight="5dp">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_rectangle"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/laymsgbox"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnOkPopup"
+            android:layout_width="@dimen/dp_150"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:background="@drawable/button_bg"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="@string/str_ok"
+            android:onClick="onClick"
+            android:textColor="@color/text_selector"/>
+    </LinearLayout>
+
+</LinearLayout>

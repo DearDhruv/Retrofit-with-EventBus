@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Retrofit and Eventbus</string>
+
+    <string name="title_list">List</string>
+    <string name="title_upload">Upload</string>
+    <string name="title_about">About</string>
+
+    <string name="error_no_internet">Check your internet connection and try again.</string>
+    <string name="error_server_problem">Server issue occurred, please try again.</string>
+    <string name="error_unknown">Unknown error</string>
+    <string name="error_image_processing">Error during processing.</string>
+    <string name="error_invalid_image">Image is invalid.</string>
+    <string name="str_file_not_found">File is not created</string>
+
+
+    <string name="str_ok">Ok</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="str_plz_select_img">Please select Image to upload.</string>
+
+</resources>
