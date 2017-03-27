@@ -43,3 +43,8 @@
 -keepattributes Signature
 # Retain declared checked exceptions for use by a Proxy instance.
 -keepattributes Exceptions
+
+-keep class .R
+-keep class **.R$* {
+    <fields>;
+}

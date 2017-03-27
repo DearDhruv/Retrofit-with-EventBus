@@ -22,10 +22,15 @@ import butterknife.ButterKnife;
 public class MyImageRecyclerViewAdapter extends
         RecyclerView.Adapter<MyImageRecyclerViewAdapter.ViewHolder> {
 
-    private final List<ImageResult> mValues;
+    private List<ImageResult> mValues;
 
     public MyImageRecyclerViewAdapter(List<ImageResult> items) {
         mValues = items;
+    }
+
+    public void updateData(List<ImageResult> items) {
+        mValues = items;
+        notifyDataSetChanged();
     }
 
     @Override

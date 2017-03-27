@@ -3,6 +3,7 @@ package com.demo.retrofit.fragments;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -16,8 +17,11 @@ import com.demo.retrofit.adapters.MyImageRecyclerViewAdapter;
 import com.demo.retrofit.network.event.ApiErrorEvent;
 import com.demo.retrofit.network.event.ApiErrorWithMessageEvent;
 import com.demo.retrofit.network.response.ImageListResponse;
+import com.demo.retrofit.network.response.submodel.ImageResult;
 
 import org.greenrobot.eventbus.Subscribe;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,7 +31,7 @@ import butterknife.Unbinder;
  * A fragment representing a list of Items.
  * <p/>
  */
-public class ImagesFragment extends BaseFragment {
+public class ImagesFragment extends BaseFragment implements SwipeRefreshLayout.OnRefreshListener {
 
     private static final String LOGTAG = "ImagesFragment";
     private static final String IMAGE_LIST_REQUEST_TAG = LOGTAG + ".imageListRequest";
@@ -37,9 +41,11 @@ public class ImagesFragment extends BaseFragment {
     @BindView(R.id.list)
     RecyclerView recyclerView;
     Unbinder unbinder;
+    @BindView(R.id.swipeLayout)
+    SwipeRefreshLayout swipeLayout;
     // TODO: Customize parameters
     private int mColumnCount = 2;
-
+    private MyImageRecyclerViewAdapter mImageRecyclerViewAdapter;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -65,6 +71,7 @@ public class ImagesFragment extends BaseFragment {
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
+        mImageRecyclerViewAdapter = new MyImageRecyclerViewAdapter(new ArrayList<ImageResult>());
     }
 
     @Override
@@ -79,7 +86,8 @@ public class ImagesFragment extends BaseFragment {
         } else {
             recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
         }
-
+        recyclerView.setAdapter(mImageRecyclerViewAdapter);
+        swipeLayout.setOnRefreshListener(this);
         return view;
     }
 
@@ -104,16 +112,15 @@ public class ImagesFragment extends BaseFragment {
         switch (imageListResponse.getRequestTag()) {
             case IMAGE_LIST_REQUEST_TAG:
                 dismissProgress();
-
-                recyclerView.setAdapter(
-                        new MyImageRecyclerViewAdapter(imageListResponse.getImageResultList()));
-
+                mImageRecyclerViewAdapter.updateData(imageListResponse.getImageResultList());
+                swipeLayout.setRefreshing(false);
                 break;
 
             default:
                 break;
         }
     }
+
 
     /**
      * EventBus listener. An API call failed. No error message was returned.
@@ -126,6 +133,8 @@ public class ImagesFragment extends BaseFragment {
             case IMAGE_LIST_REQUEST_TAG:
                 dismissProgress();
                 showToast(getString(R.string.error_server_problem));
+                swipeLayout.setRefreshing(false);
+
                 break;
 
             default:
@@ -144,6 +153,7 @@ public class ImagesFragment extends BaseFragment {
             case IMAGE_LIST_REQUEST_TAG:
                 dismissProgress();
                 showToast(event.getResultMsgUser());
+                swipeLayout.setRefreshing(false);
                 break;
 
             default:
@@ -163,5 +173,10 @@ public class ImagesFragment extends BaseFragment {
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+    }
+
+    @Override
+    public void onRefresh() {
+        loadImages();
     }
 }

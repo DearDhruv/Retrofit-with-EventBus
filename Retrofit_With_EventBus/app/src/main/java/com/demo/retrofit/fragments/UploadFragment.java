@@ -60,16 +60,14 @@ public class UploadFragment extends BaseFragment {
     private static final int CAMERA_PIC_CODE = 1002;
     private static final int GALLERY_PIC_CODE = 1003;
 
-
     @BindView(R.id.imgUpload)
     ImageView imgUpload;
     @BindView(R.id.btnUpload)
     Button btnUpload;
+
     Unbinder unbinder;
 
-    private boolean validateImages;
     private String selectedImagePath;
-
 
     private int minImageWidth = 256;
     private int minImageHeight = 256;
@@ -250,7 +248,7 @@ public class UploadFragment extends BaseFragment {
 
     private void addImages(Uri uri) {
         try {
-            validateImages = imageHelper.isPictureValidForUpload(uri);
+            boolean validateImages = imageHelper.isPictureValidForUpload(uri);
             CreateTempImagesFinishedEvent event = new CreateTempImagesFinishedEvent();
             List<Uri> uris = new ArrayList<>(1);
             uris.add(uri);
@@ -327,7 +325,7 @@ public class UploadFragment extends BaseFragment {
     }
 
     /**
-     * Response of Image list.
+     * Response of Uploaded File
      *
      * @param apiResponse UploadFileResponse
      */
