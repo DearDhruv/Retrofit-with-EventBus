@@ -139,5 +139,6 @@ public class ApiCallback<T extends AbstractApiResponse> implements Callback<T> {
      */
     public void postUnexpectedError(String resultMsgUser) {
         EventBus.getDefault().post(new ApiErrorWithMessageEvent(requestTag, resultMsgUser));
+        finishRequest();
     }
 }

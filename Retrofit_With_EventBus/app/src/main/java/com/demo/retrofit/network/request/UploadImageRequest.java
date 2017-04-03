@@ -68,7 +68,6 @@ public class UploadImageRequest extends AbstractApiRequest {
     @Override
     public void cancel() {
         callback.invalidate();
-
     }
 
     @Override
