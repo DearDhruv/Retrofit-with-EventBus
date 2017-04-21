@@ -71,7 +71,7 @@ public class ImagesFragment extends BaseFragment implements SwipeRefreshLayout.O
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
-        mImageRecyclerViewAdapter = new MyImageRecyclerViewAdapter(new ArrayList<ImageResult>());
+        mImageRecyclerViewAdapter = new MyImageRecyclerViewAdapter(new ArrayList<>());
     }
 
     @Override

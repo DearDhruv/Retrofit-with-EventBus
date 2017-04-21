@@ -80,26 +80,18 @@ public class BaseFragment extends Fragment {
 
     protected void dismissProgress() {
         if (handler != null && dialog != null) {
-            handler.post(new Runnable() {
-                @Override
-                public void run() {
-                    dialog.dismiss();
-                }
-            });
+            handler.post(() -> dialog.dismiss());
         }
     }
 
     protected void showProgress() {
         if (handler != null && dialog != null) {
 
-            handler.post(new Runnable() {
-                @Override
-                public void run() {
-                    if (!dialog.isShowing()) {
-                        dialog.show();
-                    }
-//        hideKeyboard(edt);
+            handler.post(() -> {
+                if (!dialog.isShowing()) {
+                    dialog.show();
                 }
+//        hideKeyboard(edt);
             });
         }
     }

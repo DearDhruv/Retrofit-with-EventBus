@@ -22,13 +22,10 @@ public class LauncherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         handler = new Handler();
-        runnable = new Runnable() {
-            @Override
-            public void run() {
-                Intent home_activity = new Intent(LauncherActivity.this, MainActivity.class);
-                startActivity(home_activity);
-                finish();
-            }
+        runnable = () -> {
+            Intent home_activity = new Intent(LauncherActivity.this, MainActivity.class);
+            startActivity(home_activity);
+            finish();
         };
         handler.postDelayed(runnable, SPLASH_TIME_OUT);
     }

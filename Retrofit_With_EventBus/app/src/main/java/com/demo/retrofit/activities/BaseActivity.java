@@ -92,17 +92,7 @@ public class BaseActivity extends AppCompatActivity {
 
     protected void showKeyBoardOnViewDelayed(final View v) {
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        showKeyBoardOnView(v);
-                    }
-                });
-            }
-        }, SHOW_KEYBOARD_DELAY);
+        new Handler().postDelayed(() -> runOnUiThread(() -> showKeyBoardOnView(v)), SHOW_KEYBOARD_DELAY);
     }
 
     /**
@@ -117,12 +107,7 @@ public class BaseActivity extends AppCompatActivity {
 
 
     protected void focusOnView(final ScrollView scrollView, final View v) {
-        new Handler().post(new Runnable() {
-            @Override
-            public void run() {
-                scrollView.smoothScrollTo(0, v.getBottom());
-            }
-        });
+        new Handler().post(() -> scrollView.smoothScrollTo(0, v.getBottom()));
     }
 
 

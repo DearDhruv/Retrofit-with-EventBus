@@ -155,20 +155,9 @@ public class UploadFragment extends BaseFragment {
         AlertDialog.Builder chooseImageDialog = new AlertDialog.Builder(getActivity());
         chooseImageDialog.setTitle(chooseImageTitle);
         chooseImageDialog.setPositiveButton(chooseFromCamera,
-                new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        startCamera();
-                    }
-                });
+                (dialogInterface, i) -> startCamera());
         chooseImageDialog.setNegativeButton(chooseFromGallery,
-                new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface,
-                                        int i) {
-                        openGallery();
-                    }
-                });
+                (dialogInterface, i) -> openGallery());
         chooseImageDialog.show();
     }
 

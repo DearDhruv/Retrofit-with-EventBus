@@ -163,12 +163,10 @@ public final class Helper {
         int i = 0;
 
         for (String item : list) {
-            semicolonSeparatedList += item;
-
+            semicolonSeparatedList = semicolonSeparatedList.concat(item);
             if (list.size() > i + 1) {
                 semicolonSeparatedList += ";";
             }
-
             i++;
         }
 
@@ -432,7 +430,7 @@ public final class Helper {
                                                        PowerManager.ON_AFTER_RELEASE,
                 "wakeup!");
 
-        lock.acquire();
+        lock.acquire(100000);
         lock.release();
     }
 

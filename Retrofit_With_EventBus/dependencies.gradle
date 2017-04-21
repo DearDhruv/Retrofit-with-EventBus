@@ -1,6 +1,6 @@
 ext {
     //Version
-    supportLibrary = '25.3.0'
+    supportLibrary = '26.0.0-alpha1'
     firebaseLibrary = '10.2.1'
     playServicesLibrary = '10.2.1'
 

@@ -70,13 +70,10 @@ public class ApiClient {
 
     private Context context;
 
-    private static Interceptor requestInterceptor = new Interceptor() {
-        @Override
-        public Response intercept(Interceptor.Chain chain) throws IOException {
-            // Request Intercepting...
-            Request original = chain.request();
-            return chain.proceed(original);
-        }
+    private static Interceptor requestInterceptor = chain -> {
+        // Request Intercepting...
+        Request original = chain.request();
+        return chain.proceed(original);
     };
 
 
