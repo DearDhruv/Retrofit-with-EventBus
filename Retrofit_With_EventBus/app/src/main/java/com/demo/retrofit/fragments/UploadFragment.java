@@ -2,14 +2,13 @@ package com.demo.retrofit.fragments;
 
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
+import android.app.Fragment;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v4.content.FileProvider;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -282,14 +281,19 @@ public class UploadFragment extends BaseFragment {
                     new PermissionResult() {
                         @Override
                         public void permissionGranted() {
+                            startCamera();
                         }
 
                         @Override
                         public void permissionDenied() {
+                            showSnackBar(imgUpload.getRootView(),
+                                    "Please allow permission to take Image.");
                         }
 
                         @Override
                         public void permissionForeverDenied() {
+                            showSnackBar(imgUpload.getRootView(),
+                                    "Please allow permission from Application setting.");
                         }
                     });
         }

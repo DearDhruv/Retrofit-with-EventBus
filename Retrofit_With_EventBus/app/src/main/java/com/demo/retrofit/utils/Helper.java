@@ -192,7 +192,6 @@ public final class Helper {
             throw new IllegalArgumentException("view cannot be null");
         }
 
-
         InputMethodManager imm = (InputMethodManager) context.getSystemService(
                 Context.INPUT_METHOD_SERVICE);
         imm.showSoftInput(view, InputMethodManager.SHOW_IMPLICIT);
@@ -406,13 +405,6 @@ public final class Helper {
                     Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
             ctx.startActivity(marketIntent);
         }
-    }
-
-    /**
-     * @return true If the current system OS version is higher then HONEYCOMB[11]
-     */
-    public static boolean isHoneyCombOrHigher() {
-        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB;
     }
 
     /**

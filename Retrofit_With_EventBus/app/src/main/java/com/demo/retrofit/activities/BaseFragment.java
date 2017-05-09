@@ -1,6 +1,7 @@
 package com.demo.retrofit.activities;
 
 
+import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -8,8 +9,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
+import android.support.annotation.RequiresApi;
+import android.support.design.widget.Snackbar;
+import android.support.v13.app.FragmentCompat;
+import android.support.v4.content.ContextCompat;
+import android.view.View;
 import android.widget.Toast;
 
 import com.demo.retrofit.RetroFitApp;
@@ -107,7 +111,7 @@ public class BaseFragment extends Fragment {
     @SuppressWarnings({"MissingPermission"})
     public boolean isPermissionGranted(Context context, String permission) {
         return (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) ||
-               (ActivityCompat.checkSelfPermission(context, permission) ==
+               (ContextCompat.checkSelfPermission(context, permission) ==
                 PackageManager.PERMISSION_GRANTED);
     }
 
@@ -124,7 +128,7 @@ public class BaseFragment extends Fragment {
 
         boolean granted = true;
         for (String permission : permissions) {
-            if (!(ActivityCompat.checkSelfPermission(
+            if (!(ContextCompat.checkSelfPermission(
                     context, permission) == PackageManager.PERMISSION_GRANTED))
                 granted = false;
         }
@@ -156,17 +160,15 @@ public class BaseFragment extends Fragment {
 
             arrayPermissionNotGranted = new String[permissionsNotGranted.size()];
             arrayPermissionNotGranted = permissionsNotGranted.toArray(arrayPermissionNotGranted);
-            ActivityCompat.requestPermissions(getActivity(),
-                    arrayPermissionNotGranted, KEY_PERMISSION);
+            FragmentCompat.requestPermissions(this, arrayPermissionNotGranted, KEY_PERMISSION);
         }
     }
 
-
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                           @NonNull String[] permissions,
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
-
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode != KEY_PERMISSION) {
             return;
         }
@@ -187,7 +189,7 @@ public class BaseFragment extends Fragment {
                 permissionResult.permissionGranted();
             } else {
                 for (String s : permissionDenied) {
-                    if (!ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), s)) {
+                    if (!shouldShowRequestPermissionRationale(s)) {
                         permissionResult.permissionForeverDenied();
                         return;
                     }
@@ -244,4 +246,7 @@ public class BaseFragment extends Fragment {
         super.onDestroy();
     }
 
+    public void showSnackBar(View layout, String msg) {
+        Snackbar.make(layout, msg, Snackbar.LENGTH_LONG).show();
+    }
 }
