@@ -2,13 +2,13 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion '26.0.0 rc1'
+    buildToolsVersion '25.0.3'
     defaultConfig {
         applicationId "com.demo.retrofit"
         minSdkVersion 19
         targetSdkVersion 25
         versionCode 2
-        versionName "1.0.1"
+        versionName "1.0.2"
 
         // Jack options are deprecated now
         // https://android-developers.googleblog.com/2017/03/future-of-java-8-language-feature.html

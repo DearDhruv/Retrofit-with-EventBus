@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Retrofit and Eventbus</string>
+    <string name="app_name">Retrofit with Eventbus</string>
 
     <string name="title_list">List</string>
     <string name="title_upload">Upload</string>

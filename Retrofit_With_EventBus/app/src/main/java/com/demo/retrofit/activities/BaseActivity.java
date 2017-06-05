@@ -92,7 +92,8 @@ public class BaseActivity extends AppCompatActivity {
 
     protected void showKeyBoardOnViewDelayed(final View v) {
 
-        new Handler().postDelayed(() -> runOnUiThread(() -> showKeyBoardOnView(v)), SHOW_KEYBOARD_DELAY);
+        new Handler().postDelayed(() -> runOnUiThread(() -> showKeyBoardOnView(v)),
+                SHOW_KEYBOARD_DELAY);
     }
 
     /**

@@ -33,7 +33,6 @@
             android:layout_below="@+id/imageView"
             android:layout_margin="@dimen/dp_8"
             android:gravity="center"
-            android:text="txtID"
             android:textAppearance="?attr/textAppearanceListItem"/>
 
         <TextView
@@ -44,7 +43,6 @@
             android:layout_margin="@dimen/dp_8"
             android:layout_toRightOf="@+id/txtID"
             android:gravity="center"
-            android:text="content"
             android:textAppearance="?attr/textAppearanceListItem"/>
 
     </RelativeLayout>

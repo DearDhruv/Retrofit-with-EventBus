@@ -17,7 +17,6 @@ import com.demo.retrofit.adapters.MyImageRecyclerViewAdapter;
 import com.demo.retrofit.network.event.ApiErrorEvent;
 import com.demo.retrofit.network.event.ApiErrorWithMessageEvent;
 import com.demo.retrofit.network.response.ImageListResponse;
-import com.demo.retrofit.network.response.submodel.ImageResult;
 
 import org.greenrobot.eventbus.Subscribe;
 
