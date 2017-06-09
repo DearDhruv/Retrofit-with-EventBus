@@ -1,10 +1,11 @@
 package com.demo.retrofit.activities;
 
 
+import android.app.Dialog;
 import android.app.Fragment;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,9 +14,12 @@ import android.support.annotation.RequiresApi;
 import android.support.design.widget.Snackbar;
 import android.support.v13.app.FragmentCompat;
 import android.support.v4.content.ContextCompat;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.widget.Toast;
 
+import com.demo.retrofit.R;
 import com.demo.retrofit.RetroFitApp;
 import com.demo.retrofit.network.ApiClient;
 import com.demo.retrofit.utils.PermissionResult;
@@ -38,8 +42,11 @@ public class BaseFragment extends Fragment {
     private EventBus mEventBus;
     protected ApiClient mApiClient;
 
-    ProgressDialog dialog;
-    private Handler handler;
+    private Dialog mDialog;
+    private Handler mHandler;
+    private Context mContext;
+
+    private View mView;
 
     public BaseFragment() {
         // Required empty public constructor
@@ -74,32 +81,37 @@ public class BaseFragment extends Fragment {
      * Initialize Loading Dialog
      */
     protected void initDialog(Context context) {
-        dialog = new ProgressDialog(context); // this or YourActivity
-        dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        dialog.setMessage("Please wait...");
-        dialog.setIndeterminate(true);
-        dialog.setCanceledOnTouchOutside(false);
-        handler = new Handler();
+        this.mContext = context;
+        mDialog = new Dialog(mContext); // this or YourActivity
+        mDialog.setCanceledOnTouchOutside(false);
+        mDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        mDialog.getWindow().setBackgroundDrawable(
+                new ColorDrawable(android.graphics.Color.TRANSPARENT));
+
+        LayoutInflater inflater = LayoutInflater.from(mContext);
+        mView = inflater.inflate(R.layout.loader_layout, null, false);
+        mDialog.setContentView(mView);
+
+        mHandler = new Handler();
     }
 
     protected void dismissProgress() {
-        if (handler != null && dialog != null) {
-            handler.post(() -> dialog.dismiss());
+        if (mHandler != null && mDialog != null) {
+            mHandler.post(() -> mDialog.dismiss());
         }
     }
 
     protected void showProgress() {
-        if (handler != null && dialog != null) {
+        if (mHandler != null && mDialog != null) {
 
-            handler.post(() -> {
-                if (!dialog.isShowing()) {
-                    dialog.show();
+            mHandler.post(() -> {
+                if (!mDialog.isShowing()) {
+                    mDialog.show();
                 }
 //        hideKeyboard(edt);
             });
         }
     }
-
 
     /**
      * Check if the Application required Permission is granted.
