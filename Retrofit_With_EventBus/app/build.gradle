@@ -39,32 +39,32 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     //
-    compile supportDependencies.appCompat
+    implementation supportDependencies.appCompat
     //
-    compile supportDependencies.cardView
+    implementation supportDependencies.cardView
     //
-    compile supportDependencies.design
+    implementation supportDependencies.design
     //
-    compile supportDependencies.recyclerView
+    implementation supportDependencies.recyclerView
     //
-    compile supportDependencies.supportV4
+    implementation supportDependencies.supportV4
     //
-    compile supportDependencies.supportV13
+    implementation supportDependencies.supportV13
     //
-    compile supportDependencies.supportVectorDrawable
+    implementation supportDependencies.supportVectorDrawable
     //
-    compile 'com.github.bumptech.glide:glide:3.8.0'
-    compile 'com.google.code.gson:gson:2.8.0'
-    compile 'com.squareup.okhttp3:logging-interceptor:3.7.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
-    compile 'com.squareup.retrofit2:retrofit:2.2.0'
-    compile 'org.greenrobot:eventbus:3.0.0'
-    compile 'com.airbnb.android:lottie:2.0.0'
-    compile 'com.jakewharton:butterknife:8.6.0'
+    implementation 'com.github.bumptech.glide:glide:3.8.0'
+    implementation 'com.google.code.gson:gson:2.8.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    implementation 'com.airbnb.android:lottie:2.0.0'
+    implementation 'com.jakewharton:butterknife:8.6.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
-    compile('com.mikepenz:aboutlibraries:5.9.6@aar') {
+    implementation('com.mikepenz:aboutlibraries:5.9.6@aar') {
         transitive = true
     }
 }
