@@ -123,8 +123,8 @@ public class BaseFragment extends Fragment {
     @SuppressWarnings({"MissingPermission"})
     public boolean isPermissionGranted(Context context, String permission) {
         return (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) ||
-               (ContextCompat.checkSelfPermission(context, permission) ==
-                PackageManager.PERMISSION_GRANTED);
+                (ContextCompat.checkSelfPermission(context, permission) ==
+                        PackageManager.PERMISSION_GRANTED);
     }
 
     /**

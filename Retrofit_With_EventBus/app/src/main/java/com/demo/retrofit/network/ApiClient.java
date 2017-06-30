@@ -52,14 +52,14 @@ public class ApiClient {
     private static final String WS_SUFFIX_FOLDER = "api/";
 
     private static String API_BASE_URL = WS_SCHEME
-                                         + WS_PREFIX_DOMAIN
-                                         + WS_HOSTNAME
-                                         + WS_SUFFIX_FOLDER;
+            + WS_PREFIX_DOMAIN
+            + WS_HOSTNAME
+            + WS_SUFFIX_FOLDER;
 
     /**
-     * Makes the APIService calls.
+     * Makes the ApiService calls.
      */
-    private APIService mAPIService;
+    private ApiService mApiService;
 
     /**
      * The list of running requests. Used to cancel requests.
@@ -117,7 +117,7 @@ public class ApiClient {
                 .client(httpClient)
                 .build();
 
-        mAPIService = retrofit.create(APIService.class);
+        mApiService = retrofit.create(ApiService.class);
     }
 
     private void changeApiBaseUrl(String newApiBaseUrl) {
@@ -151,19 +151,19 @@ public class ApiClient {
 
 
     /**
-     * Execute a request to retrieve the update message. See {@link APIService#getImageList()} for
+     * Execute a request to retrieve the update message. See {@link ApiService#getImageList()} for
      * parameter details.
      *
      * @param requestTag The tag for identifying the request.
      */
     public void getImageList(String requestTag) {
-        ImageListRequest request = new ImageListRequest(mAPIService, requestTag);
+        ImageListRequest request = new ImageListRequest(mApiService, requestTag);
         requests.put(requestTag, request);
         request.execute();
     }
 
     public void uploadImage(String requestTag, String file) {
-        UploadImageRequest request = new UploadImageRequest(mAPIService, requestTag, file);
+        UploadImageRequest request = new UploadImageRequest(mApiService, requestTag, file);
         requests.put(requestTag, request);
         request.execute();
     }

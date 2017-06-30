@@ -18,7 +18,7 @@ import retrofit2.http.Query;
  * api calls here although they are URL encoded by retrofit automatically. We have to test this
  * thoroughly.
  */
-public interface APIService {
+public interface ApiService {
 
     @GET("image_list.php")
     Call<ImageListResponse> getImageList();

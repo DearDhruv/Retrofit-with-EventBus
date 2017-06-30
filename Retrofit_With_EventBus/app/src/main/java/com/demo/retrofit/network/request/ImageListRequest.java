@@ -4,8 +4,8 @@ import android.content.Context;
 
 import com.demo.retrofit.R;
 import com.demo.retrofit.RetroFitApp;
-import com.demo.retrofit.network.APIService;
-import com.demo.retrofit.network.response.ApiCallback;
+import com.demo.retrofit.network.ApiCallback;
+import com.demo.retrofit.network.ApiService;
 import com.demo.retrofit.network.response.ImageListResponse;
 import com.demo.retrofit.utils.Helper;
 
@@ -13,7 +13,6 @@ import com.demo.retrofit.utils.Helper;
  * Use this request to retrieve the image list via the ImageListResponse api call.
  */
 public class ImageListRequest extends AbstractApiRequest {
-    private static final String LOGTAG = ImageListRequest.class.getSimpleName();
 
     private Context mContext;
     /**
@@ -23,11 +22,11 @@ public class ImageListRequest extends AbstractApiRequest {
     private ApiCallback<ImageListResponse> callback;
 
     /**
-     * See super constructor {@link AbstractApiRequest#AbstractApiRequest(APIService, String)}.
+     * See super constructor {@link AbstractApiRequest#AbstractApiRequest(ApiService, String)}.
      */
-    public ImageListRequest(APIService APIService, String tag) {
-        super(APIService, tag);
-        mContext = RetroFitApp.getAppContext();
+    public ImageListRequest(ApiService apiService, String tag) {
+        super(apiService, tag);
+        mContext = RetroFitApp.getApp();
     }
 
     /**

@@ -151,7 +151,7 @@ public class ImageValidator {
             Bitmap bitmap = null;
 
             if (uri.toString() != null
-                && (uri.toString().contains("docs.file") || isPicasaPhotoUri(uri))) {
+                    && (uri.toString().contains("docs.file") || isPicasaPhotoUri(uri))) {
                 try {
                     InputStream inputStream = context.getContentResolver().openInputStream(uri);
                     bitmap = BitmapFactory.decodeStream(inputStream);

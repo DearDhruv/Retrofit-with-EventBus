@@ -22,6 +22,13 @@ public class AbstractApiResponse implements Serializable {
     private String message;
 
     /**
+     * Identifies the request which was executed to receive this response. The tag is used to make
+     * sure that a class which executes a requests only handles the response which is meant for it.
+     * This implies that the tag is unique.
+     */
+    private String requestTag;
+
+    /**
      * @return The status
      */
     public int getStatus() {
@@ -48,13 +55,6 @@ public class AbstractApiResponse implements Serializable {
     public void setMessage(String message) {
         this.message = message;
     }
-
-    /**
-     * Identifies the request which was executed to receive this response. The tag is used to make
-     * sure that a class which executes a requests only handles the response which is meant for it.
-     * This implies that the tag is unique.
-     */
-    private String requestTag;
 
     public void setRequestTag(String requestTag) {
         this.requestTag = requestTag;

@@ -1,13 +1,12 @@
-package com.demo.retrofit.network.response;
+package com.demo.retrofit.network;
 
 
 import android.text.TextUtils;
 
-import com.demo.retrofit.network.APIService;
-import com.demo.retrofit.network.ApiClient;
 import com.demo.retrofit.network.event.ApiErrorEvent;
 import com.demo.retrofit.network.event.ApiErrorWithMessageEvent;
 import com.demo.retrofit.network.event.RequestFinishedEvent;
+import com.demo.retrofit.network.response.AbstractApiResponse;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -16,7 +15,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
- * Use this class to have a callback which can be used for the api calls in {@link APIService}.
+ * Use this class to have a callback which can be used for the api calls in {@link ApiService}.
  * Such a callback can be invalidated to not notify its caller about the api response.
  * Furthermore it handles finishing the request after the caller has handled the response.
  */
@@ -51,7 +50,7 @@ public class ApiCallback<T extends AbstractApiResponse> implements Callback<T> {
         }
         T result = response.body();
         if (response.isSuccessful() && result != null) {
-            if ("0".equals(result.getStatus())) {
+            if (0 == result.getStatus()) {
                 // Error occurred. Check for error message from api.
                 String resultMsgUser = result.getMessage();
 
@@ -62,21 +61,20 @@ public class ApiCallback<T extends AbstractApiResponse> implements Callback<T> {
                 } else {
                     EventBus.getDefault().post(new ApiErrorEvent(requestTag));
                 }
+            } else {
+//			modifyResponseBeforeDelivery(result); // Enable when needed.
+                result.setRequestTag(requestTag);
+                EventBus.getDefault().post(result);
             }
-//            else {
-            modifyResponseBeforeDelivery(result);
-            result.setRequestTag(requestTag);
-            EventBus.getDefault().post(result);
-//            }
         } else {
             // TODO: Move hardcode string
             EventBus.getDefault().post(
                     new ApiErrorWithMessageEvent(requestTag, "Server not available."));
 
-
 /*
 
-//TODO: If the Network response code is not between (200..300) and error body is similar to {@link #AbstractApiResponse} then use below commented code.
+			//TODO: If the Network response code is not between (200..300) and error body is
+			//similar to {@link AbstractApiResponse} then use below commented code.
             try {
                 AbstractApiResponse abstractApiResponse = (AbstractApiResponse) ApiClient.getRetrofit().responseBodyConverter(
                         AbstractApiResponse.class,
@@ -86,7 +84,7 @@ public class ApiCallback<T extends AbstractApiResponse> implements Callback<T> {
 
                 EventBus.getDefault().post(
                         new ApiErrorWithMessageEvent(requestTag, abstractApiResponse.getMessage()));
-                return;
+//                return;
 
             } catch (IOException e) {
                 e.printStackTrace();

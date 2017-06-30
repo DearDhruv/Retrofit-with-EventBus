@@ -378,7 +378,7 @@ public final class Helper {
         } catch (final NameNotFoundException ignored) {
         }
         return (String) (applicationInfo != null
-                         ? packageManager.getApplicationLabel(applicationInfo) : "Unknown");
+                ? packageManager.getApplicationLabel(applicationInfo) : "Unknown");
     }
 
     /**
@@ -415,11 +415,7 @@ public final class Helper {
         activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
 
         PowerManager power = (PowerManager) activity.getSystemService(Context.POWER_SERVICE);
-        PowerManager.WakeLock lock = power.newWakeLock(PowerManager.FULL_WAKE_LOCK
-                                                       | PowerManager
-                                                               .ACQUIRE_CAUSES_WAKEUP |
-                                                       PowerManager.ON_AFTER_RELEASE,
-                "wakeup!");
+        PowerManager.WakeLock lock = power.newWakeLock(PowerManager.FULL_WAKE_LOCK | PowerManager.ACQUIRE_CAUSES_WAKEUP | PowerManager.ON_AFTER_RELEASE, "wakeup!");
 
         lock.acquire(100000);
         lock.release();

@@ -1,7 +1,6 @@
 package com.demo.retrofit;
 
 import android.app.Application;
-import android.content.Context;
 
 import com.demo.retrofit.network.ApiClient;
 
@@ -13,34 +12,28 @@ public class RetroFitApp extends Application {
 
     private final String TAG = "RetroFitApp";
     private ApiClient mApiClient;
-    private static Context mContext = null;
+    private static RetroFitApp retroFitApp;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        mContext = getApplicationContext();
-
-        initApiClient();
+        retroFitApp = this;
     }
 
     public ApiClient getApiClient() {
-        return mApiClient;
+        return mApiClient != null ? mApiClient : initApiClient();
     }
 
     /**
      * Initialize the {@link ApiClient}
      */
-    private void initApiClient() {
+    private ApiClient initApiClient() {
         mApiClient = new ApiClient(this);
+        return mApiClient;
     }
 
-    public RetroFitApp getApp() {
-        return this;
+    public static RetroFitApp getApp() {
+        return retroFitApp;
     }
-
-    public static Context getAppContext() {
-        return mContext;
-    }
-
 
 }

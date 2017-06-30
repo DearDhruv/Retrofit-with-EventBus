@@ -1,16 +1,16 @@
 package com.demo.retrofit.network.request;
 
 
-import com.demo.retrofit.network.APIService;
+import com.demo.retrofit.network.ApiService;
 
 /**
- * Base class for the API requests. Provides functionality for cancelling APIService requests.
+ * Base class for the API requests. Provides functionality for cancelling ApiService requests.
  */
 public abstract class AbstractApiRequest {
     /**
      * The endpoint for executing the calls.
      */
-    protected final APIService apiService;
+    protected final ApiService apiService;
 
     /**
      * Identifies the request.
@@ -20,11 +20,11 @@ public abstract class AbstractApiRequest {
     /**
      * Initialize the request with the passed values.
      *
-     * @param APIService The {@link APIService} used for executing the calls.
+     * @param apiService The {@link ApiService} used for executing the calls.
      * @param tag        Identifies the request.
      */
-    protected AbstractApiRequest(APIService APIService, String tag) {
-        this.apiService = APIService;
+    protected AbstractApiRequest(ApiService apiService, String tag) {
+        this.apiService = apiService;
         this.tag = tag;
     }
 

@@ -223,7 +223,7 @@ public class UploadFragment extends BaseFragment {
                 addImages(resultData.getData());
             } else {
                 if (resultData.getClipData() != null &&
-                    resultData.getClipData().getItemCount() > 0) {
+                        resultData.getClipData().getItemCount() > 0) {
                     for (int i = 0; i < resultData.getClipData().getItemCount(); i++) {
                         addImages(resultData.getClipData().getItemAt(i).getUri());
                     }

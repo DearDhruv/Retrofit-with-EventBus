@@ -4,9 +4,9 @@ import android.content.Context;
 
 import com.demo.retrofit.R;
 import com.demo.retrofit.RetroFitApp;
-import com.demo.retrofit.network.APIService;
+import com.demo.retrofit.network.ApiCallback;
+import com.demo.retrofit.network.ApiService;
 import com.demo.retrofit.network.response.AbstractApiResponse;
-import com.demo.retrofit.network.response.ApiCallback;
 import com.demo.retrofit.utils.Helper;
 
 import java.io.File;
@@ -33,16 +33,16 @@ public class UploadImageRequest extends AbstractApiRequest {
     /**
      * Initialize the request with the passed values.
      *
-     * @param APIService
+     * @param apiService
      * @param tag
      * @param imageFile
      */
-    public UploadImageRequest(APIService APIService,
+    public UploadImageRequest(ApiService apiService,
                               String tag,
                               String imageFile) {
-        super(APIService, tag);
+        super(apiService, tag);
         this.imageFile = imageFile;
-        this.mContext = RetroFitApp.getAppContext();
+        this.mContext = RetroFitApp.getApp();
     }
 
     public void execute() {

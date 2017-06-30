@@ -22,7 +22,7 @@ public final class StorageUtils {
 
 
     private static final String EXTERNAL_STORAGE_PERMISSION = "android.permission" +
-                                                              ".WRITE_EXTERNAL_STORAGE";
+            ".WRITE_EXTERNAL_STORAGE";
     private static final String INDIVIDUAL_DIR_NAME = "uil-images";
 
     private StorageUtils() {
