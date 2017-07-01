@@ -15,7 +15,8 @@ ext {
             supportAnnotation    : "${comAndroidSupport}support-annotations:${supportLibrary}",
             supportV4            : "${comAndroidSupport}support-v4:${supportLibrary}",
             supportV13           : "${comAndroidSupport}support-v13:${supportLibrary}",
-            supportVectorDrawable: "${comAndroidSupport}support-vector-drawable:${supportLibrary}"
+            supportVectorDrawable: "${comAndroidSupport}support-vector-drawable:${supportLibrary}",
+            exifInterface: "${comAndroidSupport}exifinterface:${supportLibrary}"
     ]
 
     //Firebase Libraries dependencies

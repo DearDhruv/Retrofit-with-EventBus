@@ -72,7 +72,7 @@ public class BaseActivity extends AppCompatActivity {
      */
     protected void centerTitle(Toolbar toolbar) {
         final CharSequence originalTitle = toolbar.getTitle();
-        TextView mTitle = (TextView) toolbar.findViewById(R.id.toolbarTitle);
+        TextView mTitle = toolbar.findViewById(R.id.toolbarTitle);
         mTitle.setText(originalTitle);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         toolbar.setTitle("");

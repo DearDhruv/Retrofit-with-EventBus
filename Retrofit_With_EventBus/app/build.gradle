@@ -55,6 +55,8 @@ dependencies {
     //
     implementation supportDependencies.supportVectorDrawable
     //
+    implementation supportDependencies.exifInterface
+    //
     implementation 'com.github.bumptech.glide:glide:3.8.0'
     implementation 'com.google.code.gson:gson:2.8.1'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
