@@ -1,7 +1,11 @@
 package com.demo.retrofit.network.request;
 
 
+import android.content.Context;
+
+import com.demo.retrofit.RetroFitApp;
 import com.demo.retrofit.network.ApiService;
+import com.demo.retrofit.utils.Helper;
 
 /**
  * Base class for the API requests. Provides functionality for cancelling ApiService requests.
@@ -17,6 +21,8 @@ public abstract class AbstractApiRequest {
      */
     protected final String tag;
 
+    protected Context context;
+
     /**
      * Initialize the request with the passed values.
      *
@@ -26,6 +32,7 @@ public abstract class AbstractApiRequest {
     protected AbstractApiRequest(ApiService apiService, String tag) {
         this.apiService = apiService;
         this.tag = tag;
+        context = RetroFitApp.getApp();
     }
 
     /**
@@ -39,7 +46,9 @@ public abstract class AbstractApiRequest {
      *
      * @return boolean
      */
-    public abstract boolean isInternetActive();
+    public boolean isInternetActive() {
+        return Helper.isInternetActive(context);
+    }
 
     public abstract void execute();
 
