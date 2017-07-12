@@ -1,0 +1,6 @@
+<resources>
+    <!--APIs-->
+    <string name="api_image_list">image_list</string>
+    <string name="api_upload">upload</string>
+    <string name="api_error">error_api</string>
+</resources>

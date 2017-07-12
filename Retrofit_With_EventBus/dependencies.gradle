@@ -9,12 +9,12 @@ ext {
     comAndroidSupport = 'com.android.support:'
     supportDependencies = [
             appCompat            : "${comAndroidSupport}appcompat-v7:${supportLibrary}",
+            annotation           : "${comAndroidSupport}support-annotations:${supportLibrary}",
             cardView             : "${comAndroidSupport}cardview-v7:${supportLibrary}",
             design               : "${comAndroidSupport}design:${supportLibrary}",
             exifInterface        : "${comAndroidSupport}exifinterface:${supportLibrary}",
             palette              : "${comAndroidSupport}palette-v7:${supportLibrary}",
             recyclerView         : "${comAndroidSupport}recyclerview-v7:${supportLibrary}",
-            supportAnnotation    : "${comAndroidSupport}support-annotations:${supportLibrary}",
             supportV13           : "${comAndroidSupport}support-v13:${supportLibrary}",
             supportV4            : "${comAndroidSupport}support-v4:${supportLibrary}",
             supportVectorDrawable: "${comAndroidSupport}support-vector-drawable:${supportLibrary}"
