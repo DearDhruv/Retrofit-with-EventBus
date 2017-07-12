@@ -9,7 +9,7 @@ ext {
     comAndroidSupport = 'com.android.support:'
     supportDependencies = [
             appCompat            : "${comAndroidSupport}appcompat-v7:${supportLibrary}",
-            annotation           : "${comAndroidSupport}support-annotations:${supportLibrary}",
+            annotations          : "${comAndroidSupport}support-annotations:${supportLibrary}",
             cardView             : "${comAndroidSupport}cardview-v7:${supportLibrary}",
             design               : "${comAndroidSupport}design:${supportLibrary}",
             exifInterface        : "${comAndroidSupport}exifinterface:${supportLibrary}",

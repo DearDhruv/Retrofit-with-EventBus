@@ -276,9 +276,6 @@ public class ImageValidator {
             imageData.compress(CompressFormat.JPEG, 100, bos);
             bos.flush();
             bos.close();
-        } catch (FileNotFoundException e) {
-            Log.e(LOGTAG, "Error saving image file: " + e.getMessage());
-            return false;
         } catch (IOException e) {
             Log.e(LOGTAG, "Error saving image file: " + e.getMessage());
             return false;

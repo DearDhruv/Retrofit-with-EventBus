@@ -224,6 +224,7 @@ public class ImageUtil {
 
     }
 
+    @SuppressWarnings("ResultOfMethodCallIgnored")
     private void deleteRecursive(File fileOrDirectory) {
         if (fileOrDirectory.isDirectory())
             for (File child : fileOrDirectory.listFiles())

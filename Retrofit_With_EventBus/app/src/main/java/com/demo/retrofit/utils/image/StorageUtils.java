@@ -58,9 +58,7 @@ public final class StorageUtils {
         String externalStorageState;
         try {
             externalStorageState = Environment.getExternalStorageState();
-        } catch (NullPointerException e) { // (sh)it happens (Issue #660)
-            externalStorageState = "";
-        } catch (IncompatibleClassChangeError e) { // (sh)it happens too (Issue #989)
+        } catch (NullPointerException | IncompatibleClassChangeError e) { // (sh)it happens (Issue #660)
             externalStorageState = "";
         }
         if (preferExternal && MEDIA_MOUNTED.equals(
@@ -158,6 +156,7 @@ public final class StorageUtils {
         return appCacheDir;
     }
 
+    @SuppressWarnings("ResultOfMethodCallIgnored")
     private static File getExternalCacheDir(Context context) {
         File dataDir = new File(new File(Environment.getExternalStorageDirectory(), "Android"),
                 "data");

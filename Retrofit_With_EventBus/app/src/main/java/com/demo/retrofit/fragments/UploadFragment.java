@@ -89,8 +89,7 @@ public class UploadFragment extends BaseFragment {
      */
     // TODO: Rename and change types and number of parameters
     public static UploadFragment newInstance() {
-        UploadFragment fragment = new UploadFragment();
-        return fragment;
+        return new UploadFragment();
     }
 
     @Override

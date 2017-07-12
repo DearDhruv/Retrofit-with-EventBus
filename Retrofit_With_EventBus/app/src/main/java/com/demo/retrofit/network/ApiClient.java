@@ -113,7 +113,7 @@ public class ApiClient {
 
 
     /**
-     * Execute a request to retrieve the update message. See {@link ApiService#getImageList()} for
+     * Execute a request to retrieve the update message. See {@link ApiService#getImageList(String)} for
      * parameter details.
      *
      * @param requestTag The tag for identifying the request.

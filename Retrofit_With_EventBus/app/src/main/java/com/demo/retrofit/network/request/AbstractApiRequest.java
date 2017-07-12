@@ -46,7 +46,7 @@ public abstract class AbstractApiRequest {
      *
      * @return boolean
      */
-    public boolean isInternetActive() {
+    boolean isInternetActive() {
         return Helper.isInternetActive(context);
     }
 

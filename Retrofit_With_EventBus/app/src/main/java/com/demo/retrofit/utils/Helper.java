@@ -105,8 +105,7 @@ public final class Helper {
         Date date;
         try {
             date = sourceFormat.parse(dateStr);
-            String formattedDate = targetFormat.format(date);
-            return formattedDate;
+            return targetFormat.format(date);
         } catch (ParseException e) {
             e.printStackTrace();
         }

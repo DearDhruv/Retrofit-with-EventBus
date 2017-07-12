@@ -96,7 +96,7 @@ public class ApiCallback<T extends AbstractApiResponse> implements Callback<T> {
 
     @Override
     public void onFailure(Call<T> call, Throwable t) {
-        if (!isInvalidated) {
+        if (!call.isCanceled() && !isInvalidated) {
             EventBus.getDefault().post(new ApiErrorEvent(requestTag, t));
         }
 
