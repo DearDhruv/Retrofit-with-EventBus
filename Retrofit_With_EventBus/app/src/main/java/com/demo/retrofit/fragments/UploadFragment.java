@@ -286,13 +286,13 @@ public class UploadFragment extends BaseFragment {
                         @Override
                         public void permissionDenied() {
                             showSnackBar(imgUpload.getRootView(),
-                                    "Please allow permission to take Image.");
+                                    getString(R.string.str_allow_permission_for_image));
                         }
 
                         @Override
                         public void permissionForeverDenied() {
                             showSnackBar(imgUpload.getRootView(),
-                                    "Please allow permission from Application setting.");
+                                    getString(R.string.str_allow_permission_from_setting));
                         }
                     });
         }
