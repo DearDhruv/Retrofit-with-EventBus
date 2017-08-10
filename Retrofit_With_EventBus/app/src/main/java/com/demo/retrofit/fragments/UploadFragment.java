@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.demo.retrofit.BuildConfig;
 import com.demo.retrofit.R;
 import com.demo.retrofit.activities.BaseFragment;
@@ -309,9 +310,7 @@ public class UploadFragment extends BaseFragment {
         selectedImagePath = event.bitmapPaths.get(0);
         Glide.with(getActivity())
                 .load(selectedImagePath)
-                .centerCrop()
-                .crossFade()
-                .placeholder(R.mipmap.ic_launcher_round)
+                .apply(RequestOptions.centerCropTransform().placeholder(R.mipmap.ic_launcher_round))
                 .into(imgUpload);
 
     }

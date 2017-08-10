@@ -435,9 +435,9 @@ public class ImageUtil {
                     opts.outWidth / targetImageWidth);
             try {
                 bitmap = Glide.with(appCtx)
-                        .load(uri)
                         .asBitmap()
-                        .into(opts.outWidth / scale, opts.outHeight / scale)
+                        .load(uri)
+                        .submit(opts.outWidth / scale, opts.outHeight / scale)
                         .get();
             } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();
@@ -445,9 +445,9 @@ public class ImageUtil {
         } else {
             try {
                 bitmap = Glide.with(appCtx)
-                        .load(uri)
                         .asBitmap()
-                        .into(opts.outWidth, opts.outHeight)
+                        .load(uri)
+                        .submit(opts.outWidth, opts.outHeight)
                         .get();
             } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();
@@ -506,9 +506,9 @@ public class ImageUtil {
                     opts.outWidth / targetImageWidth);
             try {
                 bitmap = Glide.with(appCtx)
-                        .load(uri)
                         .asBitmap()
-                        .into(opts.outWidth / scale, opts.outHeight / scale)
+                        .load(uri)
+                        .submit(opts.outWidth / scale, opts.outHeight / scale)
                         .get();
             } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();
@@ -516,9 +516,9 @@ public class ImageUtil {
         } else {
             try {
                 bitmap = Glide.with(appCtx)
-                        .load(uri)
                         .asBitmap()
-                        .into(opts.outWidth, opts.outHeight)
+                        .load(uri)
+                        .submit(opts.outWidth, opts.outHeight)
                         .get();
             } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();
