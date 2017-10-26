@@ -63,17 +63,17 @@ ext {
     ]
 
     // Other
-    glide = "com.github.bumptech.glide:glide:4.0.0"
-    gson = "com.google.code.gson:gson:2.8.1"
-    okhttp3LoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:3.8.1"
+    glide = "com.github.bumptech.glide:glide:4.2.0"
+    gson = "com.google.code.gson:gson:2.8.2"
+    okhttp3LoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:3.9.0"
     gsonConverter = "com.squareup.retrofit2:converter-gson:2.3.0"
     retrofit2 = "com.squareup.retrofit2:retrofit:2.3.0"
     eventbus = "org.greenrobot:eventbus:3.0.0"
-    lottie = "com.airbnb.android:lottie:2.1.2"
+    lottie = "com.airbnb.android:lottie:2.2.5"
     aboutlibraries = "com.mikepenz:aboutlibraries:5.9.7@aar"
 
     // butterknife
-    butterknifeVersion = '8.8.0'
+    butterknifeVersion = '8.8.1'
     butterknife = "com.jakewharton:butterknife:${butterknifeVersion}"
     butterknifeCompiler = "com.jakewharton:butterknife-compiler:${butterknifeVersion}"
 

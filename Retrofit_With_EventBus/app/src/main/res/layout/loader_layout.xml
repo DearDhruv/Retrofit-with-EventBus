@@ -13,8 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         app:lottie_autoPlay="true"
-        app:lottie_colorFilter="@android:color/white"
-        app:lottie_fileName="loader.json"
+        app:lottie_cacheStrategy="strong"
+        app:lottie_enableMergePathsForKitKatAndAbove="true"
+        app:lottie_fileName="home.json"
         app:lottie_loop="true"/>
 
 </RelativeLayout>

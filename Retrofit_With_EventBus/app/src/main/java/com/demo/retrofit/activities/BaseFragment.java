@@ -19,6 +19,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.demo.retrofit.R;
 import com.demo.retrofit.RetroFitApp;
 import com.demo.retrofit.network.ApiClient;
@@ -90,6 +91,10 @@ public class BaseFragment extends Fragment {
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
         mView = inflater.inflate(R.layout.loader_layout, null, false);
+
+        LottieAnimationView lottieAnimationView = mView.findViewById(R.id.animation_view);
+        lottieAnimationView.setSpeed(2f);
+
         mDialog.setContentView(mView);
 
         mHandler = new Handler();
