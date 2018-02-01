@@ -1,7 +1,7 @@
 ext {
     // Version
     // supportLibrary = '26.0.0-beta2'
-    supportLibrary = '26.+'
+    supportLibrary = '27.+'
     firebaseLibrary = '11.+'
     playServicesLibrary = '11.+'
 
@@ -65,12 +65,12 @@ ext {
     // Other
     glide = "com.github.bumptech.glide:glide:4.2.0"
     gson = "com.google.code.gson:gson:2.8.2"
-    okhttp3LoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:3.9.0"
+    okhttp3LoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:3.9.1"
     gsonConverter = "com.squareup.retrofit2:converter-gson:2.3.0"
     retrofit2 = "com.squareup.retrofit2:retrofit:2.3.0"
-    eventbus = "org.greenrobot:eventbus:3.0.0"
-    lottie = "com.airbnb.android:lottie:2.2.5"
-    aboutlibraries = "com.mikepenz:aboutlibraries:5.9.7@aar"
+    eventbus = "org.greenrobot:eventbus:3.1.1"
+    lottie = "com.airbnb.android:lottie:2.3.1"
+    aboutlibraries = "com.mikepenz:aboutlibraries:6.0.2@aar"
 
     // butterknife
     butterknifeVersion = '8.8.1'
