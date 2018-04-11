@@ -1,9 +1,8 @@
 ext {
     // Version
-    // supportLibrary = '26.0.0-beta2'
-    supportLibrary = '27.+'
-    firebaseLibrary = '11.+'
-    playServicesLibrary = '11.+'
+    supportLibrary = '28.+'
+    firebaseLibrary = '12.+'
+    playServicesLibrary = '12.+'
 
     // Support Libraries dependencies
     comAndroidSupport = 'com.android.support:'
@@ -63,14 +62,14 @@ ext {
     ]
 
     // Other
-    glide = "com.github.bumptech.glide:glide:4.2.0"
+    glide = "com.github.bumptech.glide:glide:4.6.1"
     gson = "com.google.code.gson:gson:2.8.2"
-    okhttp3LoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:3.9.1"
-    gsonConverter = "com.squareup.retrofit2:converter-gson:2.3.0"
-    retrofit2 = "com.squareup.retrofit2:retrofit:2.3.0"
+    okhttp3LoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:3.10.0"
+    gsonConverter = "com.squareup.retrofit2:converter-gson:2.4.0"
+    retrofit2 = "com.squareup.retrofit2:retrofit:2.4.0"
     eventbus = "org.greenrobot:eventbus:3.1.1"
-    lottie = "com.airbnb.android:lottie:2.3.1"
-    aboutlibraries = "com.mikepenz:aboutlibraries:6.0.2@aar"
+    lottie = "com.airbnb.android:lottie:2.5.4"
+    aboutlibraries = "com.mikepenz:aboutlibraries:6.0.8@aar"
 
     // butterknife
     butterknifeVersion = '8.8.1'
