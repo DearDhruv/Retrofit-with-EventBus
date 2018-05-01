@@ -1,64 +1,76 @@
 ext {
     // Version
-    supportLibrary = '28.+'
-    firebaseLibrary = '12.+'
-    playServicesLibrary = '12.+'
+    support_library = '28.+'
+    firebase_library = '12.+'
+    play_services_library = '12.+'
+    arch_version = "1.0.0"
+    dagger_version = "2.15"
 
     // Support Libraries dependencies
-    comAndroidSupport = 'com.android.support:'
-    supportDependencies = [
-            appCompat            : "${comAndroidSupport}appcompat-v7:${supportLibrary}",
-            annotations          : "${comAndroidSupport}support-annotations:${supportLibrary}",
-            cardView             : "${comAndroidSupport}cardview-v7:${supportLibrary}",
-            design               : "${comAndroidSupport}design:${supportLibrary}",
-            exifInterface        : "${comAndroidSupport}exifinterface:${supportLibrary}",
-            palette              : "${comAndroidSupport}palette-v7:${supportLibrary}",
-            recyclerView         : "${comAndroidSupport}recyclerview-v7:${supportLibrary}",
-            supportV13           : "${comAndroidSupport}support-v13:${supportLibrary}",
-            supportV4            : "${comAndroidSupport}support-v4:${supportLibrary}",
-            supportVectorDrawable: "${comAndroidSupport}support-vector-drawable:${supportLibrary}"
+    com_android_support = 'com.android.support:'
+    support_dependencies = [
+            appCompat            : "${com_android_support}appcompat-v7:${support_library}",
+            annotations          : "${com_android_support}support-annotations:${support_library}",
+            cardView             : "${com_android_support}cardview-v7:${support_library}",
+            design               : "${com_android_support}design:${support_library}",
+            exifInterface        : "${com_android_support}exifinterface:${support_library}",
+            palette              : "${com_android_support}palette-v7:${support_library}",
+            recyclerView         : "${com_android_support}recyclerview-v7:${support_library}",
+            supportV13           : "${com_android_support}support-v13:${support_library}",
+            supportV4            : "${com_android_support}support-v4:${support_library}",
+            supportVectorDrawable: "${com_android_support}support-vector-drawable:${support_library}"
     ]
 
     // Firebase Libraries dependencies
-    comGoogleFirebase = 'com.google.firebase:firebase-'
-    firebaseDependencies = [
-            ads      : "${comGoogleFirebase}ads:${firebaseLibrary}",
-            auth     : "${comGoogleFirebase}auth:${firebaseLibrary}",
-            config   : "${comGoogleFirebase}config:${firebaseLibrary}",
-            core     : "${comGoogleFirebase}core:${firebaseLibrary}",
-            crash    : "${comGoogleFirebase}crash:${firebaseLibrary}",
-            database : "${comGoogleFirebase}database:${firebaseLibrary}",
-            invites  : "${comGoogleFirebase}invites:${firebaseLibrary}",
-            messaging: "${comGoogleFirebase}messaging:${firebaseLibrary}",
-            storage  : "${comGoogleFirebase}storage:${firebaseLibrary}"
+    com_google_firebase = 'com.google.firebase:firebase-'
+    firebase_dependencies = [
+            ads      : "${com_google_firebase}ads:${firebase_library}",
+            auth     : "${com_google_firebase}auth:${firebase_library}",
+            config   : "${com_google_firebase}config:${firebase_library}",
+            core     : "${com_google_firebase}core:${firebase_library}",
+            crash    : "${com_google_firebase}crash:${firebase_library}",
+            database : "${com_google_firebase}database:${firebase_library}",
+            invites  : "${com_google_firebase}invites:${firebase_library}",
+            messaging: "${com_google_firebase}messaging:${firebase_library}",
+            storage  : "${com_google_firebase}storage:${firebase_library}"
     ]
 
     // GMS  Play Libraries dependencies
-    comGoogleAndroidGms = 'com.google.android.gms:play-services-'
-    playServicesDependencies = [
-            ads        : "${comGoogleAndroidGms}ads:${playServicesLibrary}",
-            analytics  : "${comGoogleAndroidGms}analytics:${playServicesLibrary}",
-            appindexing: "${comGoogleAndroidGms}appindexing:${playServicesLibrary}",
-            appinvite  : "${comGoogleAndroidGms}appinvite:${playServicesLibrary}",
-            auth       : "${comGoogleAndroidGms}auth:${playServicesLibrary}",
-            awareness  : "${comGoogleAndroidGms}awareness:${playServicesLibrary}",
-            base       : "${comGoogleAndroidGms}base:${playServicesLibrary}",
-            cast       : "${comGoogleAndroidGms}cast:${playServicesLibrary}",
-            drive      : "${comGoogleAndroidGms}drive:${playServicesLibrary}",
-            fitness    : "${comGoogleAndroidGms}fitness:${playServicesLibrary}",
-            games      : "${comGoogleAndroidGms}games:${playServicesLibrary}",
-            gcm        : "${comGoogleAndroidGms}gcm:${playServicesLibrary}",
-            identity   : "${comGoogleAndroidGms}identity:${playServicesLibrary}",
-            location   : "${comGoogleAndroidGms}location:${playServicesLibrary}",
-            maps       : "${comGoogleAndroidGms}maps:${playServicesLibrary}",
-            nearby     : "${comGoogleAndroidGms}nearby:${playServicesLibrary}",
-            panorama   : "${comGoogleAndroidGms}panorama:${playServicesLibrary}",
-            places     : "${comGoogleAndroidGms}places:${playServicesLibrary}",
-            plus       : "${comGoogleAndroidGms}plus:${playServicesLibrary}",
-            safetynet  : "${comGoogleAndroidGms}safetynet:${playServicesLibrary}",
-            vision     : "${comGoogleAndroidGms}vision:${playServicesLibrary}",
-            wallet     : "${comGoogleAndroidGms}wallet:${playServicesLibrary}",
-            wearable   : "${comGoogleAndroidGms}wearable:${playServicesLibrary}"
+    com_google_android_gms = 'com.google.android.gms:play-services-'
+    play_services_dependencies = [
+            ads        : "${com_google_android_gms}ads:${play_services_library}",
+            analytics  : "${com_google_android_gms}analytics:${play_services_library}",
+            appindexing: "${com_google_android_gms}appindexing:${play_services_library}",
+            appinvite  : "${com_google_android_gms}appinvite:${play_services_library}",
+            auth       : "${com_google_android_gms}auth:${play_services_library}",
+            awareness  : "${com_google_android_gms}awareness:${play_services_library}",
+            base       : "${com_google_android_gms}base:${play_services_library}",
+            cast       : "${com_google_android_gms}cast:${play_services_library}",
+            drive      : "${com_google_android_gms}drive:${play_services_library}",
+            fitness    : "${com_google_android_gms}fitness:${play_services_library}",
+            games      : "${com_google_android_gms}games:${play_services_library}",
+            gcm        : "${com_google_android_gms}gcm:${play_services_library}",
+            identity   : "${com_google_android_gms}identity:${play_services_library}",
+            location   : "${com_google_android_gms}location:${play_services_library}",
+            maps       : "${com_google_android_gms}maps:${play_services_library}",
+            nearby     : "${com_google_android_gms}nearby:${play_services_library}",
+            panorama   : "${com_google_android_gms}panorama:${play_services_library}",
+            places     : "${com_google_android_gms}places:${play_services_library}",
+            plus       : "${com_google_android_gms}plus:${play_services_library}",
+            safetynet  : "${com_google_android_gms}safetynet:${play_services_library}",
+            vision     : "${com_google_android_gms}vision:${play_services_library}",
+            wallet     : "${com_google_android_gms}wallet:${play_services_library}",
+            wearable   : "${com_google_android_gms}wearable:${play_services_library}"
+    ]
+
+    // Dagger Libraries dependencies
+    com_google_dagger = 'com.google.dagger:'
+    dagger_dependencies = [
+            dagger                  : "${com_google_dagger}dagger:${dagger_version}",
+            dagger_android          : "${com_google_dagger}dagger-android:${dagger_version}",
+            dagger_android_support  : "${com_google_dagger}dagger-android-support:${dagger_version}",
+            dagger_android_processor: "${com_google_dagger}dagger-android-processor:${dagger_version}",
+            dagger_compiler         : "${com_google_dagger}dagger-compiler:${dagger_version}"
     ]
 
     // Other

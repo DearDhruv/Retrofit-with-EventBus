@@ -15,7 +15,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:background="@color/light_grey"
-        app:layoutManager="LinearLayoutManager"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
         tools:context="com.demo.retrofit.fragments.ImagesFragment"
         tools:listitem="@layout/fragment_image"/>
 </android.support.v4.widget.SwipeRefreshLayout>

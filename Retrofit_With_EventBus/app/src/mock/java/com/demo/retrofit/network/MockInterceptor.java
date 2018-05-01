@@ -22,7 +22,7 @@ class MockInterceptor implements Interceptor {
     }
 
     @Override
-    public Response intercept(@NonNull Chain chain) throws IOException {
+    public Response intercept(@NonNull Chain chain) {
         final Response response;
         String responseString;
         // Get Request URL pathSegments.

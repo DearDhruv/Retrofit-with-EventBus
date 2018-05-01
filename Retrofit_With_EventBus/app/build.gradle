@@ -9,9 +9,6 @@ android {
         targetSdkVersion 27
         versionCode 3
         versionName "1.0.3"
-
-        // Jack options are deprecated now
-        // https://android-developers.googleblog.com/2017/03/future-of-java-8-language-feature.html
     }
 
     dexOptions {
@@ -53,14 +50,14 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     //
-    implementation supportDependencies.appCompat
-    implementation supportDependencies.cardView
-    implementation supportDependencies.design
-    implementation supportDependencies.recyclerView
-    implementation supportDependencies.supportV4
-    implementation supportDependencies.supportV13
-    implementation supportDependencies.supportVectorDrawable
-    implementation supportDependencies.exifInterface
+    implementation support_dependencies.appCompat
+    implementation support_dependencies.cardView
+    implementation support_dependencies.design
+    implementation support_dependencies.recyclerView
+    implementation support_dependencies.supportV4
+    implementation support_dependencies.supportV13
+    implementation support_dependencies.supportVectorDrawable
+    implementation support_dependencies.exifInterface
     //
     implementation glide
     implementation gson
