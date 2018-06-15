@@ -4,7 +4,7 @@ ext {
     firebase_library = '12.+'
     play_services_library = '12.+'
     arch_version = "1.0.0"
-    dagger_version = "2.15"
+    dagger_version = "2.16"
 
     // Support Libraries dependencies
     com_android_support = 'com.android.support:'
@@ -74,14 +74,14 @@ ext {
     ]
 
     // Other
-    glide = "com.github.bumptech.glide:glide:4.6.1"
-    gson = "com.google.code.gson:gson:2.8.2"
+    glide = "com.github.bumptech.glide:glide:4.7.1"
+    gson = "com.google.code.gson:gson:2.8.5"
     okhttp3LoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:3.10.0"
     gsonConverter = "com.squareup.retrofit2:converter-gson:2.4.0"
     retrofit2 = "com.squareup.retrofit2:retrofit:2.4.0"
     eventbus = "org.greenrobot:eventbus:3.1.1"
-    lottie = "com.airbnb.android:lottie:2.5.4"
-    aboutlibraries = "com.mikepenz:aboutlibraries:6.0.8@aar"
+    lottie = "com.airbnb.android:lottie:2.5.5"
+    aboutlibraries = "com.mikepenz:aboutlibraries:6.0.9@aar"
 
     // butterknife
     butterknifeVersion = '8.8.1'
